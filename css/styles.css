@@ -69,6 +69,20 @@ body {
     color: var(--gray-color);
     padding-top: 24px;
     padding-bottom: 24px;
+    position: relative;
+}
+
+.header-pages::after {
+    display: block;
+    align-items: center;
+    content: '';
+    width: 100%;
+    height: 4px;
+    left: 0px;
+    bottom: 0;
+    background: #404BBF;
+    border-radius: 2px;
+    position: absolute;
 }
 
 .header-pages:hover {
@@ -98,6 +112,9 @@ body {
 .header-list {
     margin-right: 40px;
 }
+
+
+
 
 .header-list:last-child {
     margin-right: 0;
@@ -583,10 +600,27 @@ body {
     display: flex;
 }
 
+
 .portfolio-link{
     display: block;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+    position: relative;
+    overflow: hidden;
 }
+
+/*.portfolio-link::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 300px;
+    background: #4D5AE5;
+    transform: translateY();
+}*/
+
+
 
 .portfolio-link:hover{
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -596,13 +630,65 @@ body {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.askdd{
+    position: relative;
+}
+
+.askdd::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 300px;
+    background: #4D5AE5;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+    overflow: hidden;
+    
+}
+
+.portfolio-link:hover .askdd::before{
+    transform: translateY(0);
+
+}
+
+
 .portfolio-photo {
     display: block;
 }
 
+
+.text-on-photo{
+    position: absolute;
+    width: 296px;;
+    height: 96px;
+    left: 32px;
+    top: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: 0;
+    color: #F4F4FD;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.portfolio-link:hover .text-on-photo {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+
+
+
 .port-photo-text {
     border-top: none;
     padding: 32px 16px; 
+    position: relative;
 }
 
 
