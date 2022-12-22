@@ -3,6 +3,7 @@
     --gray-color: #2E2F42;
     --bage-color: #E7E9FC;
     --blue-color: #4D5AE5;
+    --overlay-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -29,6 +30,7 @@ body {
 
 .header {
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+
 }
 
 .header .container {
@@ -70,20 +72,38 @@ body {
     padding-top: 24px;
     padding-bottom: 24px;
     position: relative;
+    transition: color var(--overlay-time);
 }
 
-/*.header-pages::after {
+.header-pages.active{
+    color: var(--blue-color);
+    position: relative;
+}
+
+.header-pages.active::after {
+    position: absolute;
     display: block;
-    align-items: center;
     content: '';
     width: 100%;
     height: 4px;
-    left: 0px;
+    left: 0;
     bottom: 0;
     background: #404BBF;
     border-radius: 2px;
-    position: absolute;
+}
+
+/*
+.header-pages:hover::after {
+    background: #404BBF;
+    border-radius: 2px;
+
+}
+
+.header-pages:focus::after {
+    background: #404BBF;
+    border-radius: 2px;
 }*/
+
 
 .header-pages:hover {
     color: #434455;
@@ -99,6 +119,7 @@ body {
     color: #434455;
     padding-top: 24px;
     padding-bottom: 24px;
+    transition: color var(--overlay-time);
 }
 
 .header-info:hover {
@@ -112,6 +133,7 @@ body {
 .header-list {
     margin-right: 40px;
 }
+
 
 
 
@@ -158,16 +180,17 @@ body {
     border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    transition: background-color var(--overlay-time), box-shadow var(--overlay-time);
 }
 
 .section-one-btn:hover {
-    background: var(--blue-color);
+    background-color: var(--blue-color);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 4px;
 }
 
 .section-one-btn:focus {
-    background: #404BBF;
+    background-color: #404BBF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 }
@@ -415,6 +438,7 @@ body {
     justify-content: center;
     color: #8E8F99;
     border: 1px solid #8E8F99;
+    transition: color var(--overlay-time), border var(--overlay-time);;
 }
 
 .custom-link:hover {
@@ -511,10 +535,11 @@ body {
     justify-content: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    transition: background-color var(--overlay-time);
 }
 
 .footer-soc-link:hover {
-    background: #31D0AA;
+    background-color: #31D0AA;
 }
 
 .footer-soc-link:focus {
@@ -572,10 +597,13 @@ body {
 
 .portfolio-btn {
     padding: 12px 24px;
+    transition: background-color var(--overlay-time),
+     color var(--overlay-time),
+    box-shadow var(--overlay-time);
 }
 
 .portfolio-btn:hover {
-    background: var(--blue-color);
+    background-color: var(--blue-color);
     color: var(--white-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
@@ -605,7 +633,7 @@ body {
     display: block;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
     position: relative;
-    
+    transition: box-shadow var(--overlay-time);
 }
 
 .portfolio-link:hover{
@@ -685,8 +713,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity var(--overlay-time), visibility var(--overlay-time);
 }
 
 .backdrop.is-hidden{
