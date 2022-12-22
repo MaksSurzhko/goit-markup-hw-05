@@ -92,18 +92,6 @@ body {
     border-radius: 2px;
 }
 
-/*
-.header-pages:hover::after {
-    background: #404BBF;
-    border-radius: 2px;
-
-}
-
-.header-pages:focus::after {
-    background: #404BBF;
-    border-radius: 2px;
-}*/
-
 
 .header-pages:hover {
     color: #434455;
