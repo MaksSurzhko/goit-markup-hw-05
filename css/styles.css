@@ -666,12 +666,12 @@ body {
     transition: transform var(--overlay-time);
 }
 
-.port-photo-list:hover .text-on-photo{
+.portfolio-link:hover .text-on-photo{
     transform: translate(0 , 0);
     transition: transform var(--overlay-time);
 }
 
-.port-photo-list:focus .text-on-photo{
+.portfolio-link:focus .text-on-photo{
     transform: translate(0, 0);
     transition: transform var(--overlay-time);
 }
